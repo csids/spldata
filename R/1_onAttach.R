@@ -1,16 +1,16 @@
 #' @import data.table
 .onAttach <- function(libname, pkgname) {
   version <- tryCatch(
-    utils::packageDescription("spldata", fields = "Version"),
+    utils::packageDescription("csdata", fields = "Version"),
     warning = function(w){
       1
     }
   )
 
   packageStartupMessage(paste0(
-    "spldata ",
+    "csdata ",
     version,
     "\n",
-    "https://docs.sykdomspulsen.no/spldata/"
+    "https://www.csids.no/csdata/"
   ))
 }
