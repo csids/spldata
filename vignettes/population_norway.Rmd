@@ -55,9 +55,9 @@ d[, max_year := NULL]
 
 to_print <- gt::gt(d) %>%
   gt::tab_options(
-    table.width = "400px"
+    table.width = "300px"
   )
-for(i in seq_along(ids)){
+for(i in length(ids):1){
   to_print %<>% 
     gt::tab_row_group(
       label = ids[[i]]$label,
