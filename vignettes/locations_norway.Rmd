@@ -28,6 +28,7 @@ You can find out what version of `csdata` you have installed by running the foll
 ```{r setup}
 library(csdata)
 library(data.table)
+library(magrittr)
 ```
 
 

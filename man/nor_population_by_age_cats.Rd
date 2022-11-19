@@ -34,7 +34,7 @@ A function that easily categorizes the Norwegian population into different age c
 }
 \details{
 The current year is duplicated and added as "calyear==9999". This is in accordance with the
-spltidy principles regarding granularity_time=="event_*".
+cstidy principles regarding granularity_time=="event_*".
 }
 \examples{
 nor_population_by_age_cats(cats = list(c(1:10), c(11:20)))

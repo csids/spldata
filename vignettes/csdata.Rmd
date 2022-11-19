@@ -25,6 +25,7 @@ Please see https://www.csids.no/csdata/reference/index.html for a quick overview
 ```{r setup}
 library(csdata)
 library(data.table)
+library(magrittr)
 ```
 
 ## Location
