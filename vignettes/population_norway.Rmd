@@ -1,0 +1,69 @@
+---
+title: "Population (Norway)"
+output: rmarkdown::html_vignette
+author: "Richard Aubrey White"
+date: "2022-10-18"
+vignette: >
+  %\VignetteIndexEntry{Population (Norway)}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(csdata)
+library(data.table)
+library(magrittr)
+```
+
+Valid locations (and location types) are available in `csdata::nor_locations_names()`.
+
+Here we list as a reference table the valid `location_code`s and `location_name_description_nb`s (the two most commonly used locations).
+
+```{r echo=FALSE, results='asis'}
+d <- csdata::nor_population_by_age_cats()[csdata::nor_locations_names(),on="location_code"][granularity_geo %in% c("nation","county") & calyear!=9999 & calyear>=1990]
+setorder(d,location_order,calyear)
+d <- d[,.(
+  location_name_description_nb, 
+  calyear,
+  pop_jan1_n = formatC(pop_jan1_n, big.mark=".", decimal.mark=",", format="f", digits=0)
+)]
+
+d[, min_year := min(calyear), by=.(location_name_description_nb)]
+d[, max_year := max(calyear), by=.(location_name_description_nb)]
+
+ids <- list()
+for(i in 1:nrow(d)){
+  if(d[i]$calyear==d[i]$min_year){
+    ids[[length(ids)+1]] <- list(
+      label = d[i]$location_name_description_nb,
+      start_row = i
+    )
+  } else if(d[i]$calyear==d[i]$max_year){
+    ids[[length(ids)]]$stop_row <- i
+  }
+}
+
+d[, location_name_description_nb := NULL]
+d[, min_year := NULL]
+d[, max_year := NULL]
+
+to_print <- gt::gt(d) %>%
+  gt::tab_options(
+    table.width = "400px"
+  )
+for(i in seq_along(ids)){
+  to_print %<>% 
+    gt::tab_row_group(
+      label = ids[[i]]$label,
+      rows = ids[[i]]$start_row:ids[[i]]$stop_row
+    )
+}
+to_print %>%
+  gt::tab_header(title = "Reference table of calyear and pop_jan1_n")
+```

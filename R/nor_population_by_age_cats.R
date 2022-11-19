@@ -48,7 +48,7 @@ nor_population_by_age_cats <- function(
 ){
 
   calyear <- NULL
-
+  if(is.null(cats)) cats <- list()
   stopifnot(is.list(cats))
   stopifnot(border == 2020)
 
@@ -57,7 +57,7 @@ nor_population_by_age_cats <- function(
   }
 
   if(include_total){
-    cats[[length(cats)+1]] <- -99:100
+    cats[[length(cats)+1]] <- -99:1000
     names(cats)[length(cats)] <- "total"
   }
 
