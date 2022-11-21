@@ -107,6 +107,13 @@ gt::gt(d) %>%
     )
   ) %>%
   gt::tab_footnote(
+    footnote = "Landsdeler/riskdeler. [Geographical regions](https://en.wikipedia.org/wiki/Regions_of_Norway).",
+    locations = gt::cells_body(
+      columns = granularity_geo,
+      rows = granularity_geo == "georegion"
+    )
+  ) %>%
+  gt::tab_footnote(
     footnote = "Mattilsynet-regioner. Food authority regions.",
     locations = gt::cells_body(
       columns = granularity_geo,

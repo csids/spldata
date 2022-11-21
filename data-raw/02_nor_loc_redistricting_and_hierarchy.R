@@ -334,11 +334,11 @@ nor_loc_redistricting_notmainlandmunicip <- function(
 
   if(include_extra_vars == T){
     retval[location_code_current == "notmainlandmunicip_nor2100", municip_name := "Svalbard"]
-    retval[location_code_current == "notmainlandmunicip_nor2100", county_code := "notmainlandcounty21"]
+    retval[location_code_current == "notmainlandmunicip_nor2100", county_code := "notmainlandcounty_nor21"]
     retval[location_code_current == "notmainlandmunicip_nor2100", county_name := "Utenfor fastlands-Norge (Svalbard)"]
 
     retval[location_code_current == "notmainlandmunicip_nor2200", municip_name := "Jan Mayen"]
-    retval[location_code_current == "notmainlandmunicip_nor2200", county_code := "notmainlandcounty22"]
+    retval[location_code_current == "notmainlandmunicip_nor2200", county_code := "notmainlandcounty_nor22"]
     retval[location_code_current == "notmainlandmunicip_nor2200", county_name := "Utenfor fastlands-Norge (Jan Mayen)"]
 
     retval[, georegion_code := NA_character_]
