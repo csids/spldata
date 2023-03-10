@@ -42,3 +42,7 @@ vignettes/*.pdf
 # Website
 ^docs$
 _pkgdown.yml
+/doc/
+/Meta/
+
+@eaDir
