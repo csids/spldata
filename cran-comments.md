@@ -2,13 +2,13 @@
 
 ## Test environments
 
-* local Ubuntu 20.04 install, R 4.1.3
+* local Ubuntu 20.04 install, R 4.2.3
 * win-builder
 * rhub
 
 ## R CMD check results
 
-0 errors | 0 warnings
+0 errors | 0 warnings | 0 notes
 
 * checking CRAN incoming feasibility ... NOTE
 

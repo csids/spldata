@@ -1,8 +1,6 @@
 ---
 title: "Locations (Norway)"
 output: rmarkdown::html_vignette
-author: "Richard Aubrey White"
-date: "2022-11-18"
 vignette: >
   %\VignetteIndexEntry{Locations (Norway)}
   %\VignetteEncoding{UTF-8}

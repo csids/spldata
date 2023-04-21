@@ -1,8 +1,6 @@
 ---
 title: "csdata"
 output: rmarkdown::html_vignette
-author: "Richard Aubrey White"
-date: "2021-02-18"
 vignette: >
   %\VignetteIndexEntry{csdata}
   %\VignetteEncoding{UTF-8}

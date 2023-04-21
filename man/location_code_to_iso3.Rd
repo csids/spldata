@@ -16,5 +16,5 @@ Character vector the same length as x, containing the corresponding iso3.
 Convert location_code to iso3
 }
 \examples{
-csdata::location_code_to_iso3(c("nation_nor", "county03"))
+csdata::location_code_to_iso3(c("nation_nor", "county_nor03"))
 }

@@ -31,7 +31,7 @@ location_code_to_granularity_geo.default <- function(x, location_reference = NUL
 #' @param location_reference A location reference data.table.
 #' @returns Character vector the same length as x, containing the corresponding granularity_geo.
 #' @examples
-#' csdata::location_code_to_granularity_geo(c("nation_nor", "county03"))
+#' csdata::location_code_to_granularity_geo(c("nation_nor", "county_nor03"))
 #' @export
 location_code_to_granularity_geo <- function(x, location_reference = NULL){
   UseMethod("location_code_to_granularity_geo")
@@ -51,7 +51,7 @@ location_code_to_iso3.default <- function(x){
 #' @param x Either a vector, or a data.frame/data.table containing a column called "location_code".
 #' @returns Character vector the same length as x, containing the corresponding iso3.
 #' @examples
-#' csdata::location_code_to_iso3(c("nation_nor", "county03"))
+#' csdata::location_code_to_iso3(c("nation_nor", "county_nor03"))
 #' @export
 location_code_to_iso3 <- function(x){
   UseMethod("location_code_to_iso3")

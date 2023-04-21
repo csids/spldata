@@ -18,5 +18,5 @@ Character vector the same length as x, containing the corresponding granularity_
 Convert location_code to granularity_geo
 }
 \examples{
-csdata::location_code_to_granularity_geo(c("nation_nor", "county03"))
+csdata::location_code_to_granularity_geo(c("nation_nor", "county_nor03"))
 }
