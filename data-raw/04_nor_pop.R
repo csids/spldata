@@ -51,6 +51,15 @@ nor_population_by_age <- function(
                              )
   ]
 
+  # 2 more years
+  missing_years <- (max(pop_municip$calyear) + 1):(max(pop_municip$calyear) + 10)
+  for (i in missing_years) {
+    popx <- pop_municip[calyear == max(calyear)]
+    popx[, calyear := i]
+    popx[, imputed := TRUE]
+    pop_municip <- rbind(pop_municip, popx)
+  }
+
 
   # county ----
   pop_county <- merge(

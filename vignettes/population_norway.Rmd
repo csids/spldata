@@ -38,44 +38,29 @@ q
 Here we list as a reference table the valid populations as of January 1st (`pop_jan1_n`).
 
 ```{r echo=FALSE, results='asis'}
-d <- csdata::nor_population_by_age_cats()[csdata::nor_locations_names(),on="location_code"][granularity_geo %in% c("nation","county") & calyear>=1990]
+d <- csdata::nor_population_by_age_cats()[csdata::nor_locations_names(),on="location_code"][granularity_geo %in% c("nation","county") & calyear>=2005]
 setorder(d,location_order,calyear)
+d[, location_name := factor(location_name, levels = unique(location_name))]
 d <- d[,.(
-  location_name_description_nb, 
+  location_name, 
   calyear,
   pop_jan1_n = formatC(pop_jan1_n, big.mark=".", decimal.mark=",", format="f", digits=0)
 )]
 
-d[, min_year := min(calyear), by=.(location_name_description_nb)]
-d[, max_year := max(calyear), by=.(location_name_description_nb)]
+d <- dcast.data.table(
+  d,
+  calyear ~ location_name,
+  value.var = "pop_jan1_n"
+)
+rownames(d) <- d$calyear
 
-ids <- list()
-for(i in 1:nrow(d)){
-  if(d[i]$calyear==d[i]$min_year){
-    ids[[length(ids)+1]] <- list(
-      label = d[i]$location_name_description_nb,
-      start_row = i
-    )
-  } else if(d[i]$calyear==d[i]$max_year){
-    ids[[length(ids)]]$stop_row <- i
-  }
-}
-
-d[, location_name_description_nb := NULL]
-d[, min_year := NULL]
-d[, max_year := NULL]
-
-to_print <- gt::gt(d) %>%
+to_print <- gt::gt(
+  d,
+  rowname_col = "calyear"
+  ) %>%
   gt::tab_options(
     table.width = "300px"
-  )
-for(i in length(ids):1){
-  to_print %<>% 
-    gt::tab_row_group(
-      label = ids[[i]]$label,
-      rows = ids[[i]]$start_row:ids[[i]]$stop_row
-    )
-}
-to_print %>%
+  ) %>% 
   gt::tab_header(title = "Reference table of calyear and pop_jan1_n")
+to_print
 ```
