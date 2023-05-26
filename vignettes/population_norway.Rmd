@@ -47,20 +47,35 @@ d <- d[,.(
   pop_jan1_n = formatC(pop_jan1_n, big.mark=".", decimal.mark=",", format="f", digits=0)
 )]
 
-d <- dcast.data.table(
-  d,
+locations <- unique(d$location_name)
+
+wd1 <- dcast.data.table(
+  d[location_name %in% locations[1:8]],
   calyear ~ location_name,
   value.var = "pop_jan1_n"
 )
-rownames(d) <- d$calyear
 
-to_print <- gt::gt(
-  d,
+wd2 <- dcast.data.table(
+  d[location_name %in% locations[1:8]],
+  calyear ~ location_name,
+  value.var = "pop_jan1_n"
+)
+
+gt::gt(
+  wd1,
   rowname_col = "calyear"
   ) %>%
   gt::tab_options(
     table.width = "300px"
   ) %>% 
   gt::tab_header(title = "Reference table of calyear and pop_jan1_n")
-to_print
+
+gt::gt(
+  wd2,
+  rowname_col = "calyear"
+  ) %>%
+  gt::tab_options(
+    table.width = "300px"
+  ) %>% 
+  gt::tab_header(title = "Reference table of calyear and pop_jan1_n")
 ```
