@@ -56,7 +56,7 @@ wd1 <- dcast.data.table(
 )
 
 wd2 <- dcast.data.table(
-  d[location_name %in% locations[1:8]],
+  d[location_name %in% locations[9:16]],
   calyear ~ location_name,
   value.var = "pop_jan1_n"
 )
