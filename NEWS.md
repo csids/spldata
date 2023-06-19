@@ -1,3 +1,8 @@
+# Version 2023.6.19
+
+- Inclusion of location_name_short in nor_locations_names for border=2020.
+- CRAN submission.
+
 # Version 2023.5.26
 
 - Inclusion of location_name_short in nor_locations_names for border=2024.
