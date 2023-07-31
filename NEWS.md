@@ -1,3 +1,7 @@
+# Version 2023.7.31
+
+- Including Sami names for counties.
+
 # Version 2023.6.19
 
 - Inclusion of location_name_short in nor_locations_names for border=2020.
