@@ -1,3 +1,7 @@
+# Version 2023.8.21
+
+- Fixing error in the name Trøndelag-Trööndelage.
+
 # Version 2023.7.31
 
 - Including Sami names for counties.
