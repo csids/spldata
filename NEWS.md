@@ -1,3 +1,7 @@
+# Version 2023.11.29
+
+- Fixing error in redistricting of counties for border=2024.
+
 # Version 2023.8.21
 
 - Fixing error in the name Trøndelag-Trööndelage.

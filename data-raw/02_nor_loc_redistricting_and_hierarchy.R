@@ -631,8 +631,8 @@ nor_loc_redistricting_county <- function(
     by.x = c("municip_code_original", "year"),
     by.y = c("municip_code", "year"),
   )
-  x[, county_code_original := stringr::str_sub(municip_code_original, 1, 9)]
-  x[, county_code_current := stringr::str_sub(municip_code_current, 1, 9)]
+  x[, county_code_original := stringr::str_sub(municip_code_original, 1, 13)]
+  x[, county_code_current := stringr::str_sub(municip_code_current, 1, 13)]
 
   x[, county_code_original := stringr::str_replace(county_code_original, "municip", "county")]
   x[, county_code_current := stringr::str_replace(county_code_current, "municip", "county")]
