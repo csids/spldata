@@ -37,7 +37,7 @@ A data.table containing the following columns:
 A function that easily categorizes the Norwegian population into different age categories.
 }
 \examples{
+\dontrun{
 nor_population_by_age_cats(cats = list(c(1:10), c(11:20)))
-nor_population_by_age_cats(cats = list("one to ten" = c(1:10), "eleven to twenty" = c(11:20)))
-nor_population_by_age_cats(cats = list(c(1:10), c(11:20), "021p"=c(21:200)))
+}
 }

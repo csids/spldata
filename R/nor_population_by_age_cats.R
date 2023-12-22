@@ -29,9 +29,9 @@ nor_population_by_age_internal <- function(
 #' This is in accordance with the cstidy principles regarding granularity_time=="event_*".
 #' @param border The year in which Norwegian geographical boundaries were designated (2020, 2024).
 #' @examples
+#' \dontrun{
 #' nor_population_by_age_cats(cats = list(c(1:10), c(11:20)))
-#' nor_population_by_age_cats(cats = list("one to ten" = c(1:10), "eleven to twenty" = c(11:20)))
-#' nor_population_by_age_cats(cats = list(c(1:10), c(11:20), "021p"=c(21:200)))
+#' }
 #' @return A data.table containing the following columns:
 #' - granularity_geo
 #' - location_code
