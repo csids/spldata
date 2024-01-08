@@ -164,7 +164,7 @@ nor_loc_name_all <- function(x_year_end = 2024) {
 
   # set group order ----
   d <- rbind(
-    data.table(location_code = "nation_nor", location_name = "Norge/Noreg/Norway", group_order = 1),
+    data.table(location_code = "nation_nor", location_name = "Norge-Noreg-Norway", group_order = 1),
 
     location_wide[,.(location_code = georegion_code, location_name = georegion_name, group_order = 2)],
 
