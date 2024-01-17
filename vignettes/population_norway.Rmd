@@ -62,7 +62,7 @@ gt::gt(
   gt::tab_options(
     table.width = "300px"
   ) %>% 
-  gt::tab_header(title = "Reference table of calyear and pop_jan1_n")
+  gt::tab_header(title = "Reference table of calyear and pop_jan1_n (nation and georegion)")
 ```
 
 ```{r echo=FALSE, results='asis'}
@@ -96,7 +96,7 @@ gt::gt(
   gt::tab_options(
     table.width = "300px"
   ) %>% 
-  gt::tab_header(title = "Reference table of calyear and pop_jan1_n")
+  gt::tab_header(title = "Reference table of calyear and pop_jan1_n (county)")
 
 gt::gt(
   wd2,
@@ -105,5 +105,5 @@ gt::gt(
   gt::tab_options(
     table.width = "300px"
   ) %>% 
-  gt::tab_header(title = "Reference table of calyear and pop_jan1_n")
+  gt::tab_header(title = "Reference table of calyear and pop_jan1_n (county)")
 ```
