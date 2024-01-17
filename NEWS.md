@@ -1,3 +1,7 @@
+# Version 24.1.17
+
+- Fixing an error in merging for 2023->2024.
+
 # Version 2023.12.26
 
 - Improving names for georegion for border=2024.
