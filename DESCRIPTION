@@ -1,6 +1,6 @@
 Package: csdata
 Title: Structural Data for Norway
-Version: 24.1.17
+Version: 2024.4.21
 Authors@R: c(
   person(c("Richard","Aubrey"), "White", email = "hello@rwhite.no", role = c("aut", "cre"),
     comment = c(ORCID = "0000-0002-6747-1726")
