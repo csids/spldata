@@ -62,16 +62,17 @@ nor_population_by_age_cats <- function(
 
   if(include_total){
     cats[[length(cats)+1]] <- -99:1000
-    names(cats)[length(cats)] <- "total"
   }
 
   retval <- vector("list", length = length(cats))
   for(i in seq_along(cats)){
     vals <- cats[[i]]
     name <- names(cats)[i]
-    if(is.null(name) | is.na(name)){
+    if(include_total & i==length(cats)){
+      name <- "total"
+    } else if(is.null(name)){
       name <- paste0(formatC(vals[1],width=3,flag="0"),"_",formatC(vals[length(vals)],width=3,flag="0"))
-    } else if(name==""){
+    } else if(is.na(name) | name==""){
       name <- paste0(formatC(vals[1],width=3,flag="0"),"_",formatC(vals[length(vals)],width=3,flag="0"))
     }
 
