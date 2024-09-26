@@ -1,3 +1,7 @@
+# Version 2024.9.26
+
+- location_name_file_nb_ascii in csdata::nor_location_names is now in lowercase.
+
 # Version 2024.4.26
 
 - Fixing an error that wouldn't allow for include_total = TRUE in nor_population_by_age_cats

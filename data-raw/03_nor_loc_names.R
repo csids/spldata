@@ -395,7 +395,7 @@ nor_loc_name_all <- function(x_year_end = 2024) {
   d[, location_name_file_nb_ascii := stringr::str_replace_all(location_name_file_nb_ascii, "\u0161", "s")]
   d[, location_name_file_nb_ascii := stringr::str_replace_all(location_name_file_nb_ascii, "\u00fc", "u")]
   d[, location_name_file_nb_ascii := stringr::str_replace_all(location_name_file_nb_ascii, "\u00f6", "o")]
-
+  d[, location_name_file_nb_ascii := tolower(location_name_file_nb_ascii)]
   # d[, location_name := stringi::stri_enc_toascii(location_name)]
   # d[, location_name := gsub("\032"stringi::stri_enc_toascii(location_name)]
   #
